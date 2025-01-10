@@ -72,6 +72,30 @@
     
     
     <!-- add additional templates below, for example to transform the tei:lb in <br/> empty elements, tei:hi[@rend = 'sup'] in <sup> elements, the underlined text, additions with the attribute "overwritten" etc. -->
+            <!-- Handle line breaks -->
+<xsl:template match="tei:lb">
+    <br/>
+</xsl:template>
 
+<!-- Handle superscript text -->
+<xsl:template match="tei:hi[@rend='sup']">
+    <sup><xsl:apply-templates/></sup>
+</xsl:template>
+
+<!-- Handle underlined text -->
+<xsl:template match="tei:hi[@rend='u']">
+    <span class="underline"><xsl:apply-templates/></span>
+</xsl:template>
+
+<!-- Handle overwritten text -->
+<xsl:template match="tei:add[@place='overwritten']">
+    <span>
+        <xsl:attribute name="class">
+            <xsl:value-of select="@hand"/>
+            <xsl:text> overwritten</xsl:text>
+        </xsl:attribute>
+        <xsl:apply-templates/>
+    </span>
+</xsl:template>
     
 </xsl:stylesheet>

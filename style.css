@@ -1,6 +1,8 @@
 body {
-
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.6;
 }
+
 .starter-template {
   padding: 40px 15px;
   text-align: center;
@@ -32,4 +34,49 @@ p {
     display: none !important;
 }
 
+.transcription {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
 
+/* Line breaks spacing */
+br {
+    margin-bottom: 0.5em;
+    display: block;
+    content: "";
+}
+
+/* Underlined text */
+.underline {
+    text-decoration: underline;
+}
+
+/* Superscript additions */
+.supraAdd {
+    vertical-align: super;
+    font-size: smaller;
+    color: #2c5282;
+}
+
+/* Overwritten text */
+.overwritten {
+    border-bottom: 1px dotted #666;
+}
+
+/* Hand-specific styling */
+#MWS {
+    color: #2c5282; /* Mary's edits in blue */
+}
+
+#PBS {
+    color: #805ad5; /* Percy's edits in purple */
+}
+
+/* Deleted text */
+del {
+    text-decoration: line-through;
+    color: #718096;
+}

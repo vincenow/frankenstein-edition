@@ -21,9 +21,19 @@
                                     <xsl:value-of select="count(//tei:del|//tei:add)" /> <!-- Counts all the add and del elements, and puts it in a list item -->
                                 </li>
                                 <li>Number of additions: 
-                                    <!-- count the additions only -->
+                                    <xsl:value-of select="count(//tei:add)"/><!-- count the additions only -->
                                 </li>
                                 <!-- add other list items in which you count things, such as the modifications made by Percy -->
+                                <li>Percy's modifications: 
+                                    <xsl:value-of select="count(//*[@hand='#PBS'])"/>
+                                </li>
+                                <li>Mary's modifications: 
+                                    <xsl:value-of select="count(//*[@hand='#MWS'])"/>
+                                </li>
+                                <li>Line breaks: 
+                                    <xsl:value-of select="count(//tei:lb)"/>
+                                </li>
+                                
                             </ul>
                         </div>
                      </div>
