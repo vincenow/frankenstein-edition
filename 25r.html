@@ -46,7 +46,11 @@
     <div class="container-fluid">
       <h1>Frankenstein Volume I Draft in Chapter Sequence</h1>
       <span style="visibility:hidden" id='page'>52</span>
-      <h2 id='folio'>25r</h2> <!-- you can style this h2 element differently, but you should keep the id="folio" and the elements value *unchanged* -->
+      <div class="navigation-with-folio d-flex justify-content-between align-items-center my-4">
+        <a href="24v.html" class="btn btn-primary btn-sm" role="button">Previous</a>
+        <h2 id='folio'>25r</h2> <!-- you can style this h2 element differently, but you should keep the id="folio" and the elements value *unchanged* -->
+        <a href="25v.html" class="btn btn-primary btn-sm" role="button">Next</a>
+      </div>
       <div id="stats"></div>
       <div class="form-group">
         <select class="form-control" id="sel-hand" onChange="selectHand(event)">
@@ -54,6 +58,12 @@
           <option value="Mary">Mary Shelley's Hand Highlighted</option>
           <option value="Percy">Percy Shelley's Hand Highlighted</option>
         </select>
+         <!-- rounded toggle switch -->
+         <label class="switch mt-2">
+          <input type="checkbox" id="toggleDeletionsSwitch">
+          <span class="slider round"></span>
+        </label>
+        <small class="form-text text-muted">Hide deletions</small>
       </div>
       <div class="row">
         <div class="col-5">   

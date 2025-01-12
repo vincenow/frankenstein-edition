@@ -100,19 +100,65 @@ function documentLoader() {
   function selectHand(event) {
   var visible_mary = document.getElementsByClassName('#MWS');
   var visible_percy = document.getElementsByClassName('#PBS');
+
   // Convert the HTMLCollection to an array for forEach compatibility
   var MaryArray = Array.from(visible_mary);
   var PercyArray = Array.from(visible_percy);
     if (event.target.value == 'both') {
     //write an forEach() method that shows all the text written and modified by both hand (in black?). The forEach() method of Array instances executes a provided function once for each array element.
-     
+    MaryArray.forEach(el => {
+      el.style.color = 'inherit';
+      el.style.display = 'inline';
+    });
+    PercyArray.forEach(el => {
+      el.style.color = 'inherit';
+      el.style.display = 'inline';
+    }); 
     } else if (event.target.value == 'Mary') {
      //write an forEach() method that shows all the text written and modified by Mary in a different color (or highlight it) and the text by Percy in black. 
-     
-    } else {
-     //write an forEach() method that shows all the text written and modified by Percy in a different color (or highlight it) and the text by Mary in black.
-    
-    }
+     MaryArray.forEach(el => {
+      el.style.color = '#805ad5'; // works but highlights too much
+      el.style.display = 'inline';
+    });
+    PercyArray.forEach(el => {
+      el.style.color = 'black';
+      el.style.display = 'inline';
+    });
+    } else if (event.target.value === 'Percy') {
+    // Highlight Percy's text and show Mary's text in black
+      PercyArray.forEach(el => {
+        el.style.setProperty('color', '#805ad5', 'important'); // tried to fix it with the important property but did not work...
+        el.style.setProperty('display', 'inline', 'important');
+    });
+      MaryArray.forEach(el => {
+        el.style.setProperty('color', 'black', 'important');
+        el.style.setProperty('display', 'inline', 'important');
+    });
+  } 
   }
 // write another function that will toggle the display of the deletions by clicking on a button
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("DOM fully loaded.");
+
+  const toggleSwitch = document.getElementById("toggleDeletionsSwitch");
+  if (!toggleSwitch) {
+    console.error("Toggle switch not found!");
+    return;
+  }
+
+  toggleSwitch.addEventListener("change", function () {
+    // Select all elements with either .crossedOut or .overwritten classes
+    const deletions = document.querySelectorAll(".crossedOut, .overwritten");
+
+    if (deletions.length === 0) {
+      console.warn("No crossed-out or overwritten deletion elements found.");
+    }
+
+    // Toggle the 'hidden' class for each matched element
+    deletions.forEach(element => {
+      element.classList.toggle("hidden");
+    });
+  });
+});
+
 // EXTRA: write a function that will display the text as a reading text by clicking on a button or another dropdown list, meaning that all the deletions are removed and that the additions are shown inline (not in superscript)
