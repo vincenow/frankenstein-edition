@@ -82,8 +82,8 @@ del {
 }
 
 .crossedOut {
-  text-decoration: line-through; /* Visually crosses out the text */
-  color: black; /* Optional: Keep the color black for "blackink" */
+  text-decoration: line-through; 
+  color: black; 
 }
 
 /* circled number */
