@@ -64,50 +64,50 @@
     
     <!-- add additional templates below, for example to transform the tei:lb in <br/> empty elements, tei:hi[@rend = 'sup'] in <sup> elements, the underlined text, additions with the attribute "overwritten" etc. -->
             
-<!-- line breaks -->
-<xsl:template match="tei:lb">
-    <br/>
-</xsl:template>
+    <!-- line breaks -->
+    <xsl:template match="tei:lb">
+        <br/>
+    </xsl:template>
 
-<!-- superscript text -->
-<xsl:template match="tei:hi[@rend='sup']">
-    <sup><xsl:apply-templates/></sup>
-</xsl:template>
+    <!-- superscript text -->
+    <xsl:template match="tei:hi[@rend='sup']">
+        <sup><xsl:apply-templates/></sup>
+    </xsl:template>
 
-<!-- underlined text -->
-<xsl:template match="tei:hi[@rend='u']">
-    <span class="underline">
-        <xsl:apply-templates/>
-    </span>
-</xsl:template>
-
- <!-- ADD OVERWRITTEN text -->
-    <xsl:template match="tei:add[@place='overwritten']">
-        <span class="add-overwritten">
+    <!-- underlined text -->
+    <xsl:template match="tei:hi[@rend='u']">
+        <span class="underline">
             <xsl:apply-templates/>
         </span>
     </xsl:template>
 
- <!-- DEL OVERWRITTEN text -->
-<xsl:template match="tei:del[@type='overwritten']">
-    <span class="overwritten">
-        <xsl:apply-templates/>
+    <!-- ADD OVERWRITTEN text -->
+        <xsl:template match="tei:add[@place='overwritten']">
+            <span class="add-overwritten">
+                <xsl:apply-templates/>
+            </span>
+        </xsl:template>
+
+    <!-- DEL OVERWRITTEN text -->
+    <xsl:template match="tei:del[@type='overwritten']">
+        <span class="overwritten">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+
+    <!-- DEL crossedOut -->
+
+    <xsl:template match="tei:del[@type='crossedOut']">
+    <span class="crossedOut">
+        <xsl:apply-templates select="node()"/> 
     </span>
-</xsl:template>
+    </xsl:template>
 
-<!-- DEL crossedOut -->
-
-<xsl:template match="tei:del[@type='crossedOut']">
-  <span class="crossedOut">
-    <xsl:apply-templates select="node()"/> 
-  </span>
-</xsl:template>
-
-<!-- circled page numbers -->
-<xsl:template match="tei:hi[@rend='circled']">
-    <span class="circled-number">
-        <xsl:apply-templates/>
-    </span>
-</xsl:template>
+    <!-- circled page numbers -->
+    <xsl:template match="tei:hi[@rend='circled']">
+        <span class="circled-number">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
    
 </xsl:stylesheet>

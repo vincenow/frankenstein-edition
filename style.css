@@ -106,99 +106,99 @@ del {
     display: inline-block;
     width: 60px;
     height: 34px;
-  }
+}
   
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: 0.4s;
-    border-radius: 34px; 
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: 0.4s;
-    border-radius: 50%; 
-  }
-  
-  input:checked + .slider {
-    background-color: #2196F3;
-  }
-  
-  input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-  }
-  
-  input:checked + .slider:before {
-    transform: translateX(26px);
-  }
-  
-  .slider {
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-  }
-  
-  .slider:before {
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-  }
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
 
-  .hidden {
-    display: none;
-  }
-  
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px; 
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%; 
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.hidden {
+  display: none;
+}
+
 
   /* link color */
 a {
-    color: #ee8a08;
-    text-decoration: none; 
-  }
+  color: #ee8a08;
+  text-decoration: none; 
+}
 
     /* hover link effect */
-  a:hover {
-    color: #9e5c05; 
-    text-decoration: underline;
-  }
+a:hover {
+  color: #9e5c05; 
+  text-decoration: underline;
+}
 
   
   /* Figure styles */
-  .image-with-caption {
-    display: inline-block; 
-    text-align: center; 
-    width: 100%;
-  }
-  
+.image-with-caption {
+  display: inline-block; 
+  text-align: center; 
+  width: 100%;
+}
+
   /* caption styling */
-  .image-with-caption figcaption {
-    margin-top: 10px; 
-    font-size: 0.9rem; 
-    color: #555; 
-    font-style: italic; 
-    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); 
-    transition: text-shadow 0.3s ease, color 0.3s ease; 
-    position: relative; 
-    z-index: 10;
-    background: rgba(255, 255, 255, 0.8); 
-    padding: 5px 10px; 
-    border-radius: 5px; 
-  }
+.image-with-caption figcaption {
+  margin-top: 10px; 
+  font-size: 0.9rem; 
+  color: #555; 
+  font-style: italic; 
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); 
+  transition: text-shadow 0.3s ease, color 0.3s ease; 
+  position: relative; 
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.8); 
+  padding: 5px 10px; 
+  border-radius: 5px; 
+}
 
   /* hover effect for the caption */
 .image-with-caption figcaption:hover {
@@ -210,15 +210,15 @@ a {
   
   /* oval frame */
 
-  .oval-frame {
-    border-radius: 50%;
-    width: 400px; 
-    height: 300px; 
-    object-fit: cover; 
-    overflow: hidden;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); 
-    transition: box-shadow 0.3s ease, transform 0.3s ease; 
-  }
+.oval-frame {
+  border-radius: 50%;
+  width: 400px; 
+  height: 300px; 
+  object-fit: cover; 
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); 
+  transition: box-shadow 0.3s ease, transform 0.3s ease; 
+}
 
 .oval-frame:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); 
